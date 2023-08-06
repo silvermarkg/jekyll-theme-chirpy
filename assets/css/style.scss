@@ -4,3 +4,35 @@
 @import '{{ site.theme }}';
 
 /* append your custom style below */
+
+/*
+  Responsive Design:
+
+ {sidebar, content, panel} >= 1200px screen width
+ {sidebar, content} >= 850px screen width
+ {content} <= 849px screen width
+
+*/
+
+#sidebar {
+  .profile-wrapper {
+    display: none;
+  }
+
+  ul {
+    margin-top: 2rem; //$sidebar-top;
+  }
+}
+
+#topbanner {
+  display: flex;
+  justify-content: center;
+  height: $topbanner-height;
+  background: var(--main-bg);
+  padding-top: 1rem;
+
+  a {
+    height: $topbanner-height;
+    width: $topbanner-width;
+  }
+}
