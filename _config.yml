@@ -94,7 +94,7 @@ comments:
   giscus:
     repo: silvermarkg/silvermarkg.github.io # <gh-username>/<repo>
     repo_id:
-    category: Comments
+    category: Blog comments
     category_id:
     mapping: # optional, default to 'pathname'
     input_position: # optional, default to 'bottom'
