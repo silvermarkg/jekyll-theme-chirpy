@@ -5,6 +5,25 @@
 
 /* append your custom style below */
 
+/* Custom imports */
+@import 'colors/smg-dark-colors';
+
+/* Custom colors */
+html {
+  @media (prefers-color-scheme: light) {
+    &[data-mode='dark'] {
+      @include smg-dark-colors;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      @include smg-dark-colors;
+    }
+  }
+}
+
 /*
   Responsive Design:
 
@@ -14,6 +33,7 @@
 
 */
 
+/* Custom styles */
 #sidebar {
   .profile-wrapper {
     display: none;
