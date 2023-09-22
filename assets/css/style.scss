@@ -2,6 +2,7 @@
 ---
 
 @import '{{ site.theme }}';
+@import 'smg-sidebar';
 
 /* append your custom style below */
 
@@ -60,4 +61,68 @@ html {
 #topbar {
   border-top: 1px solid var(--main-border-color);
   border-bottom: 1px solid var(--main-border-color);
+
+  #breadcrumb {
+    %sidebar-link-hover {
+      &:hover {
+        color: var(--sidebar-active-color);
+      }
+    }
+
+    a {
+      @extend %sidebar-links;
+    }
+
+    ul {
+      //flex-direction:column!important;
+      list-style-type: none;
+      margin-bottom: 2rem;
+
+      li.nav-item {
+        opacity: 0.9;
+        //width: 20%;
+        padding-left: 0.5rem;
+        //padding-right: 0.5rem;
+
+        a.nav-link {
+          @include pt-pb(0.6rem);
+
+          display: flex;
+          align-items: center;
+          border-radius: 0.75rem;
+          font-weight: 600;
+
+          &:hover {
+            background-color: var(--sidebar-hover-bg);
+          }
+
+          i {
+            font-size: 90%;
+            opacity: 0.8;
+            margin-right: 0.5rem;
+          }
+
+          span {
+            font-size: 90%;
+            letter-spacing: 0.2px;
+          }
+        }
+
+        &.active {
+          .nav-link {
+            color: var(--sidebar-active-color);
+            background-color: var(--sidebar-hover-bg);
+
+            span {
+              opacity: 1;
+            }
+          }
+        }
+
+        &:not(:first-child) {
+          //margin-top: 0.25rem;
+        }
+      }
+    }
+  }
 }
